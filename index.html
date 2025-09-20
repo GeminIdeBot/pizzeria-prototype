@@ -27,19 +27,25 @@
         <section id="menu">
             <h2>Наше меню</h2>
             <div class="pizza-item">
+                <img src="https://via.placeholder.com/150x100?text=Pizza+Margherita" alt="Маргарита">
                 <h3>Маргарита</h3>
                 <p>Классическая пицца с томатным соусом, моцареллой и базиликом.</p>
                 <span>150 грн</span>
+                <button class="order-pizza-btn" data-pizza="Маргарита" data-price="150">Заказать</button>
             </div>
             <div class="pizza-item">
+                <img src="https://via.placeholder.com/150x100?text=Pizza+Pepperoni" alt="Пепперони">
                 <h3>Пепперони</h3>
                 <p>Острая пицца с салями пепперони и сыром.</p>
                 <span>180 грн</span>
+                <button class="order-pizza-btn" data-pizza="Пепперони" data-price="180">Заказать</button>
             </div>
             <div class="pizza-item">
+                <img src="https://via.placeholder.com/150x100?text=Pizza+4+Cheese" alt="4 Сыра">
                 <h3>4 Сыра</h3>
                 <p>Изысканное сочетание четырех видов сыра.</p>
                 <span>200 грн</span>
+                <button class="order-pizza-btn" data-pizza="4 Сыра" data-price="200">Заказать</button>
             </div>
         </section>
 
@@ -63,5 +69,26 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <!-- Модальное окно заказа -->
+    <div id="order-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Ваш заказ</h2>
+            <form id="order-form">
+                <p>Вы выбрали: <span id="modal-pizza-name"></span> (<span id="modal-pizza-price"></span> грн)</p>
+                <label for="name">Ваше имя:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="phone">Телефон:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="address">Адрес доставки:</label>
+                <textarea id="address" name="address" required></textarea>
+
+                <button type="submit">Подтвердить заказ</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

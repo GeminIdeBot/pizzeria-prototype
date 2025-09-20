@@ -76,23 +76,114 @@ h1, h2 {
 }
 
 .pizza-item {
+    display: flex;
+    align-items: center;
     border-bottom: 1px solid #eee;
     padding: 15px 0;
+    margin-bottom: 20px;
 }
 
 .pizza-item:last-child {
     border-bottom: none;
 }
 
+.pizza-item img {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+.pizza-item div {
+    flex-grow: 1;
+}
+
 .pizza-item h3 {
-    margin-top: 0;
+    margin: 0;
     color: #a00;
+}
+
+.pizza-item p {
+    margin: 5px 0;
 }
 
 .pizza-item span {
     font-weight: bold;
     color: #555;
-    float: right;
+    margin-left: auto; /* Pushes price to the right */
+    margin-right: 10px;
+}
+
+.pizza-item button {
+    background-color: #a00;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    font-size: 0.9em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pizza-item button:hover {
+    background-color: #800;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    #hero {
+        padding: 30px 10px;
+    }
+
+    #hero h2 {
+        font-size: 1.5em;
+    }
+
+    #hero button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    main {
+        margin: 10px auto;
+        padding: 10px;
+    }
+
+    h1, h2 {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    h1, h2 {
+        font-size: 1.5em;
+    }
+
+    header {
+        padding: 0.5em 0;
+    }
+
+    header nav ul li a {
+        font-size: 0.9em;
+    }
+
+    .pizza-item h3 {
+        font-size: 1.1em;
+    }
+
+    .pizza-item p {
+        font-size: 0.9em;
+    }
+
+    .pizza-item span {
+        font-size: 0.9em;
+    }
 }
 
 footer {
@@ -101,4 +192,81 @@ footer {
     background-color: #333;
     color: white;
     margin-top: 20px;
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* 10% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 500px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    color: #a00;
+    text-align: center;
+    margin-top: 0;
+}
+
+.modal-content form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.modal-content form input[type="text"],
+.modal-content form input[type="tel"],
+.modal-content form textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.modal-content form button[type="submit"] {
+    background-color: #a00;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.modal-content form button[type="submit"]:hover {
+    background-color: #800;
 }
